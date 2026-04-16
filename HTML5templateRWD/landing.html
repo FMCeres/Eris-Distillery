@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        
+        <!--Don't forget to fill these out!-->
+        <title>Eris Distillery | Premium Spirits</title>
+        <meta name="description" content="Premium spirits crafted with integrity, sustainability, and community at our core. Discover Eris Acid House Gin." />
+        
+        
+        <!--Links to the main Style Sheet-->
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        
+        <!--Links to a modernizer JavaScript file that fixes a lot of issues with old browsers-->
+        <script src="js/modernizr.js"></script>
+        
+        <!--Makes the site so it won't scale down on small devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+
+    <body>
+        <!-- Age Verification Popup -->
+        <div id="ageVerificationModal" class="age-modal">
+            <div class="age-modal-content">
+                <div class="age-modal-header">
+                    <h2>Age Verification Required</h2>
+                    <p>You must be 21 or older to view this content</p>
+                </div>
+                <div class="age-modal-body">
+                    <p>Eris Distillery is committed to responsible consumption. Please verify your age to continue.</p>
+                    <div class="age-buttons">
+                        <button id="confirmAge" class="age-btn age-btn-confirm">I am 21 or older</button>
+                        <button id="denyAge" class="age-btn age-btn-deny">I am under 21</button>
+                    </div>
+                    <p class="age-disclaimer">By clicking "I am 21 or older", you agree to our <a href="#" class="age-link">Terms of Service</a> and <a href="#" class="age-link">Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Under Age Message -->
+        <div id="underAgeMessage" class="age-message" style="display: none;">
+            <div class="age-message-content">
+                <h2>Access Restricted</h2>
+                <p>You must be 21 or older to view this content.</p>
+                <p>Please visit us when you're of legal drinking age.</p>
+            </div>
+        </div>
+
+<div class="wrapper">
+    <header>
+        <div class="header-content">
+            <h1>ERIS Distillery</h1>
+            <div class="header-buttons">
+                <a href="#" class="header-btn" id="productsBtn">Products</a>
+                <div class="header-divider"></div>
+                <a href="#" class="header-btn" id="storeBtn">Store</a>
+                <div class="header-divider"></div>
+                <a href="profile.html" class="header-btn profile-icon" id="profileBtn">👤</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Personalized Welcome Banner -->
+    <div id="welcome-banner" class="welcome-banner" style="display: none;">
+        <div class="welcome-content">
+            <div class="welcome-text">
+                <h2>Welcome back, <span id="welcome-name"></span>!</h2>
+                <p>Thank you for your RSVP. You've earned an exclusive <span id="welcome-discount"></span>% discount on your first order!</p>
+            </div>
+            <div class="welcome-actions">
+                <button id="close-welcome-banner" class="close-welcome">Close</button>
+            </div>
+        </div>
+    </div>
+          
+    <div class="hero-container">
+        <div class="hero">
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="slideshow/barmat.png" alt="Eris Barmat">
+                </div>
+                <div class="slide">
+                    <img src="slideshow/eris gin packaging-rev-03.png" alt="Eris Gin Revised">
+                </div>
+                <div class="slide">
+                    <img src="slideshow/Free_Vodka_Bottle_Mockup_1.png" alt="Eris Vodka Bottle Mockup">
+                </div>
+                
+                <!-- Navigation dots -->
+                <div class="slideshow-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                
+                <!-- Navigation arrows -->
+                <a class="prev" onclick="changeSlide(-1)">❮</a>
+                <a class="next" onclick="changeSlide(1)">❯</a>
+            </div>
+            
+            <!-- Shop Now Button moved below hero -->
+            <div class="hero-button-container">
+                <button class="button button1" id="shopNowBtn">
+                    <span id="discountText">Shop Now</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+<main>
+    <div class="content-container">
+        <!-- Special Discount Banner -->
+        <div id="discountBanner" class="discount-banner" style="display: none;">
+            <div class="discount-content">
+                <div class="discount-icon">🎉</div>
+                <div class="discount-text">
+                    <h3>Special Offer!</h3>
+                    <p>You've been selected for an exclusive discount</p>
+                </div>
+                <div class="discount-percentage">
+                    <span id="discountAmount">0%</span>
+                    <span class="discount-label">OFF</span>
+                </div>
+            </div>
+            <button id="closeDiscountBanner" class="close-banner">×</button>
+        </div>
+
+        <section class="intro-section">
+            <div class="intro-text">
+                <h2>Premium Spirits, Crafted with Purpose</h2>
+                <p>Eris Distillery is a queer-owned spirits brand in Texas, crafting premium liquors from ethically and sustainably farmed Red Hard Winter Wheat. Rooted in integrity and community, Eris reinvests locally to nurture a vibrant, healthy future.</p>
+                <p>Beyond distilling, the brand channels the bold, electric spirit of queer nightlife—where self-expression, resilience, and celebration collide. Each bottle embodies the pulse of the clubs that inspire it: unapologetic, inclusive, and alive with possibility.</p>
+                <p class="highlight-text">Experience our signature product: <strong>Eris Acid House Gin!</strong></p>
+            </div>
+            <div class="product-image">
+                <img src="images/package design mockup.png" alt="Eris Acid House Gin">
+            </div>
+        </section>
+
+        <!-- Product Showcase Section -->
+        <section class="product-showcase">
+            <div class="showcase-content">
+                <div class="showcase-header">
+                    <h2>Our Premium Collection</h2>
+                    <p>Discover our carefully crafted spirits</p>
+                </div>
+                
+                <div class="products-container">
+                    <div class="products-stack">
+                        <div class="product-card featured">
+                            <div class="featured-badge">Featured</div>
+                            <div class="product-image-card">
+                                <img src="images/eris gin packaging-02.png" alt="Eris Acid House Gin">
+                            </div>
+                            <div class="product-info">
+                                <h3>Eris Acid House Gin</h3>
+                                <p class="product-description">Bold, electric, and alive with possibility. Our newest creation.</p>
+                                <div class="product-price">
+                                    <span class="price-label">Starting at</span>
+                                    <span class="price" id="price2">$32</span>
+                                </div>
+                                <button class="product-btn">Learn More</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-card">
+                                <img src="slideshow/Free_Vodka_Bottle_Mockup_1.png" alt="Eris Vodka">
+                            </div>
+                            <div class="product-info">
+                                <h3>Eris Vodka</h3>
+                                <p class="product-description">Premium vodka crafted with precision and passion.</p>
+                                <div class="product-price">
+                                    <span class="price-label">Starting at</span>
+                                    <span class="price" id="price3">$65</span>
+                                </div>
+                                <button class="product-btn">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-card">
+                <div class="newsletter-header">
+                    <h3>Connect with Us</h3>
+                    <p>Join our community of spirits enthusiasts and be the first to know about new releases, exclusive events, and special offers.</p>
+                </div>
+                
+                <form class="newsletter-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="newsletter-email">Email Address *</label>
+                            <input type="email" id="newsletter-email" name="newsletter-email" autocomplete="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="newsletter-name">Full Name</label>
+                            <input type="text" id="newsletter-name" name="newsletter-name" autocomplete="name" placeholder="Your Name">
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter-updates" checked>
+                            <span class="checkmark"></span>
+                            I want to receive updates about new products and special offers
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter-events">
+                            <span class="checkmark"></span>
+                            I want to be notified about distillery events and tastings
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Eris Distillery</h4>
+            <p>Crafting premium spirits with integrity, sustainability, and community at our core.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Contact Information</h4>
+            <div class="contact-info">
+                <p><strong>Email:</strong> info@erisdistillery.com</p>
+                <p><strong>Phone:</strong> (555) 123-4567</p>
+                <p><strong>Location:</strong> Texas, USA</p>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Twitter</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Eris Distillery. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</footer>
+        </div>
+
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const isDemoMode = urlParams.get('demo') === '1';
+
+            // Age Verification and Discount System
+            let userVerified = false;
+            let discountPercentage = 0;
+            let originalPrices = {};
+
+            // Age verification modal functionality
+            function showAgeVerification() {
+                const modal = document.getElementById('ageVerificationModal');
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function hideAgeVerification() {
+                const modal = document.getElementById('ageVerificationModal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            function showUnderAgeMessage() {
+                const message = document.getElementById('underAgeMessage');
+                message.style.display = 'block';
+                document.querySelector('.wrapper').style.display = 'none';
+            }
+
+            function generateRandomDiscount() {
+                const discounts = [20, 30, 40];
+                discountPercentage = discounts[Math.floor(Math.random() * discounts.length)];
+                return discountPercentage;
+            }
+
+            function applyDiscount() {
+                if (discountPercentage > 0) {
+                    // Store original prices
+                    originalPrices.price1 = 45;
+                    originalPrices.price2 = 32;
+                    originalPrices.price3 = 65;
+
+                    // Apply discount
+                    const newPrice1 = Math.round(originalPrices.price1 * (1 - discountPercentage / 100));
+                    const newPrice2 = Math.round(originalPrices.price2 * (1 - discountPercentage / 100));
+                    const newPrice3 = Math.round(originalPrices.price3 * (1 - discountPercentage / 100));
+
+                    document.getElementById('price1').textContent = `$${newPrice1}`;
+                    document.getElementById('price2').textContent = `$${newPrice2}`;
+                    document.getElementById('price3').textContent = `$${newPrice3}`;
+
+                    // Show discount banner
+                    document.getElementById('discountAmount').textContent = discountPercentage + '%';
+                    document.getElementById('discountBanner').style.display = 'block';
+
+                    // Update shop now button
+                    document.getElementById('discountText').textContent = `Shop Now - ${discountPercentage}% Off!`;
+                }
+            }
+
+            // Event listeners for age verification
+            document.getElementById('confirmAge').addEventListener('click', function() {
+                userVerified = true;
+                hideAgeVerification();
+                
+                // Generate and apply random discount
+                generateRandomDiscount();
+                applyDiscount();
+                
+                // Store verification in session
+                sessionStorage.setItem('ageVerified', 'true');
+                sessionStorage.setItem('discount', discountPercentage.toString());
+                
+                // Show welcome banner after age verification
+                setTimeout(() => {
+                    checkForUserDataAfterAgeVerification();
+                }, 500); // Small delay to let age verification modal close
+            });
+
+            document.getElementById('denyAge').addEventListener('click', function() {
+                showUnderAgeMessage();
+            });
+
+            // Close discount banner
+            document.getElementById('closeDiscountBanner').addEventListener('click', function() {
+                document.getElementById('discountBanner').style.display = 'none';
+            });
+
+            // Newsletter form submission
+            document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for subscribing to our newsletter!');
+                this.reset();
+            });
+
+            // Product button interactions
+            document.querySelectorAll('.product-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (!userVerified) {
+                        showAgeVerification();
+                    } else {
+                        alert('Redirecting to product page...');
+                    }
+                });
+            });
+
+            // Shop Now button interaction
+            document.getElementById('shopNowBtn').addEventListener('click', function() {
+                if (!userVerified) {
+                    showAgeVerification();
+                } else {
+                    alert('Redirecting to shop...');
+                }
+            });
+
+            // Cookie utility functions (from original)
+            function setCookie(name, value, days) {
+                const expires = new Date();
+                expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+            }
+
+            function getCookie(name) {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for(let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+            // Header button functionality
+            function handleHeaderButtons() {
+                const productsBtn = document.getElementById('productsBtn');
+                const storeBtn = document.getElementById('storeBtn');
+                const profileBtn = document.getElementById('profileBtn');
+                
+                productsBtn.addEventListener('click', function() {
+                    if (!userVerified) {
+                        showAgeVerification();
+                    } else {
+                        // Scroll to products section
+                        document.querySelector('.product-showcase').scrollIntoView({ 
+                            behavior: 'smooth' 
+                        });
+                    }
+                });
+                
+                storeBtn.addEventListener('click', function() {
+                    if (!userVerified) {
+                        showAgeVerification();
+                    } else {
+                        // Scroll to shop now button or show store message
+                        document.getElementById('shopNowBtn').scrollIntoView({ 
+                            behavior: 'smooth' 
+                        });
+                    }
+                });
+                
+                profileBtn.addEventListener('click', function(e) {
+                    if (!userVerified) {
+                        e.preventDefault(); // Prevent navigation if not verified
+                        showAgeVerification();
+                    }
+                    // If verified, allow normal link navigation to profile.html
+                });
+            }
+
+            // Store user name when newsletter form is submitted
+            function storeUserName() {
+                const nameInput = document.getElementById('newsletter-name');
+                if (nameInput && nameInput.value.trim()) {
+                    setCookie('userName', nameInput.value.trim(), 365);
+                }
+            }
+
+            // Slideshow functionality
+            let slideIndex = 1;
+            let slideInterval;
+
+            function showSlide(n) {
+                const slides = document.getElementsByClassName('slide');
+                const dots = document.getElementsByClassName('dot');
+                
+                if (n > slides.length) { slideIndex = 1; }
+                if (n < 1) { slideIndex = slides.length; }
+                
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove('active');
+                }
+                
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].classList.remove('active');
+                }
+                
+                slides[slideIndex - 1].classList.add('active');
+                dots[slideIndex - 1].classList.add('active');
+            }
+
+            function changeSlide(n) {
+                showSlide(slideIndex += n);
+                resetSlideInterval();
+            }
+
+            function currentSlide(n) {
+                showSlide(slideIndex = n);
+                resetSlideInterval();
+            }
+
+            function autoSlide() {
+                changeSlide(1);
+            }
+
+            function startSlideInterval() {
+                slideInterval = setInterval(autoSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function resetSlideInterval() {
+                clearInterval(slideInterval);
+                startSlideInterval();
+            }
+
+            // Welcome banner functionality
+            function showWelcomeBanner(userData) {
+                const banner = document.getElementById('welcome-banner');
+                const nameElement = document.getElementById('welcome-name');
+                const discountElement = document.getElementById('welcome-discount');
+                
+                if (userData && userData.name) {
+                    nameElement.textContent = userData.name;
+                    
+                    if (userData.discount) {
+                        discountElement.textContent = userData.discount;
+                    } else {
+                        discountElement.textContent = '20'; // Default discount
+                    }
+                    
+                    // Show banner and trigger fade-in animation
+                    banner.style.display = 'block';
+                    
+                    // Trigger fade-in animation after a small delay to ensure display is set
+                    setTimeout(() => {
+                        banner.classList.add('fade-in');
+                    }, 50);
+                    
+                    // Auto-hide after 10 seconds
+                    setTimeout(() => {
+                        if (banner.style.display !== 'none') {
+                            hideWelcomeBanner();
+                        }
+                    }, 10000);
+                }
+            }
+
+            // Test function to show welcome banner with sample data
+            function testWelcomeBanner() {
+                const testUserData = {
+                    name: 'Test User',
+                    discount: 30
+                };
+                
+                // Force show the banner for testing
+                const banner = document.getElementById('welcome-banner');
+                banner.style.display = 'block';
+                banner.classList.remove('fade-out');
+                
+                // Set the content
+                document.getElementById('welcome-name').textContent = testUserData.name;
+                document.getElementById('welcome-discount').textContent = testUserData.discount;
+                
+                // Trigger fade-in animation
+                setTimeout(() => {
+                    banner.classList.add('fade-in');
+                }, 50);
+                
+                // Auto-hide after 10 seconds
+                setTimeout(() => {
+                    hideWelcomeBanner();
+                }, 10000);
+            }
+
+            // Test function to simulate the age verification flow
+            function testAgeVerification() {
+                // Set a test cookie for user data
+                document.cookie = "userName=Test User; path=/";
+                
+                // Simulate age verification
+                userVerified = true;
+                
+                // Show age verification modal first
+                showAgeVerification();
+                
+                // Then simulate clicking "I am 21+"
+                setTimeout(() => {
+                    hideAgeVerification();
+                    generateRandomDiscount();
+                    applyDiscount();
+                    sessionStorage.setItem('ageVerified', 'true');
+                    sessionStorage.setItem('discount', discountPercentage.toString());
+                    
+                    // Show welcome banner after age verification
+                    setTimeout(() => {
+                        checkForUserDataAfterAgeVerification();
+                    }, 500);
+                }, 2000); // Wait 2 seconds to show the modal
+            }
+
+            function hideWelcomeBanner() {
+                const banner = document.getElementById('welcome-banner');
+                
+                // Add fade-out class for smooth animation
+                banner.classList.remove('fade-in');
+                banner.classList.add('fade-out');
+                
+                // Hide banner after animation completes
+                setTimeout(() => {
+                    banner.style.display = 'none';
+                    banner.classList.remove('fade-out'); // Reset for next time
+                }, 600); // Match the CSS transition duration
+            }
+
+            // Check for user data and show welcome banner
+            function checkForUserData() {
+                // First check localStorage (from index page submission)
+                const localUserData = localStorage.getItem('userData');
+                if (localUserData) {
+                    try {
+                        const userData = JSON.parse(localUserData);
+                        showWelcomeBanner(userData);
+                        // Apply the user's discount
+                        if (userData.discount) {
+                            discountPercentage = userData.discount;
+                            applyDiscount();
+                        }
+                        // Clear localStorage after showing banner
+                        localStorage.removeItem('userData');
+                        return;
+                    } catch (e) {
+                        console.error('Error parsing user data:', e);
+                    }
+                }
+
+                // Check cookies for existing user
+                const userName = getCookie('userName');
+                if (userName) {
+                    // Try to fetch user data from database
+                    fetch(`get_user_data.php?name=${encodeURIComponent(userName)}`)
+                        .then(response => response.json())
+                        .then(result => {
+                            if (result.success && result.user_data) {
+                                showWelcomeBanner(result.user_data);
+                                if (result.user_data.discount) {
+                                    discountPercentage = result.user_data.discount;
+                                    applyDiscount();
+                                }
+                            } else {
+                                // Fallback: show banner with just the name from cookie
+                                showWelcomeBanner({
+                                    name: userName,
+                                    discount: 20 // Default discount
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error fetching user data:', error);
+                            // Fallback: show banner with just the name from cookie
+                            showWelcomeBanner({
+                                name: userName,
+                                discount: 20 // Default discount
+                            });
+                        });
+                }
+            }
+
+            // Check for user data after age verification
+            function checkForUserDataAfterAgeVerification() {
+                // First check localStorage (from index page submission)
+                const localUserData = localStorage.getItem('userData');
+                if (localUserData) {
+                    try {
+                        const userData = JSON.parse(localUserData);
+                        showWelcomeBanner(userData);
+                        // Apply the user's discount
+                        if (userData.discount) {
+                            discountPercentage = userData.discount;
+                            applyDiscount();
+                        }
+                        // Clear localStorage after showing banner
+                        localStorage.removeItem('userData');
+                        return;
+                    } catch (e) {
+                        console.error('Error parsing user data:', e);
+                    }
+                }
+
+                // Check cookies for existing user
+                const userName = getCookie('userName');
+                if (userName) {
+                    // Try to fetch user data from database
+                    fetch(`get_user_data.php?name=${encodeURIComponent(userName)}`)
+                        .then(response => response.json())
+                        .then(result => {
+                            if (result.success && result.user_data) {
+                                showWelcomeBanner(result.user_data);
+                                if (result.user_data.discount) {
+                                    discountPercentage = result.user_data.discount;
+                                    applyDiscount();
+                                }
+                            } else {
+                                // Fallback: show banner with just the name from cookie
+                                showWelcomeBanner({
+                                    name: userName,
+                                    discount: 20 // Default discount
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error fetching user data:', error);
+                            // Fallback: show banner with just the name from cookie
+                            showWelcomeBanner({
+                                name: userName,
+                                discount: 20 // Default discount
+                            });
+                        });
+                } else {
+                    // If no user data found, show a generic welcome message
+                    showWelcomeBanner({
+                        name: 'Guest',
+                        discount: 20 // Default discount
+                    });
+                }
+            }
+
+            // Initialize page
+            document.addEventListener('DOMContentLoaded', function() {
+                handleHeaderButtons();
+                
+                // Initialize slideshow
+                showSlide(slideIndex);
+                startSlideInterval();
+                
+                // Pause slideshow on hover
+                const slideshowContainer = document.querySelector('.slideshow-container');
+                slideshowContainer.addEventListener('mouseenter', function() {
+                    clearInterval(slideInterval);
+                });
+                
+                slideshowContainer.addEventListener('mouseleave', function() {
+                    startSlideInterval();
+                });
+                
+                // Show welcome banner on page load
+                setTimeout(() => {
+                    checkForUserDataAfterAgeVerification();
+                }, 1500); // Show banner 1.5 seconds after page load
+                
+                // Check if user was already verified in this session
+                const wasVerified = sessionStorage.getItem('ageVerified');
+                const savedDiscount = sessionStorage.getItem('discount');
+                
+                if (isDemoMode) {
+                    userVerified = true;
+                    const demoDiscount = parseInt(savedDiscount || '20', 10);
+                    discountPercentage = Number.isNaN(demoDiscount) ? 20 : demoDiscount;
+                    applyDiscount();
+                } else if (wasVerified === 'true') {
+                    userVerified = true;
+                    if (savedDiscount) {
+                        discountPercentage = parseInt(savedDiscount);
+                        applyDiscount();
+                    }
+                } else {
+                    // Show age verification popup
+                    setTimeout(showAgeVerification, 1000);
+                }
+                
+                // Add newsletter form submission handler
+                const newsletterForm = document.querySelector('.newsletter-form');
+                if (newsletterForm) {
+                    newsletterForm.addEventListener('submit', function(e) {
+                        storeUserName();
+                    });
+                }
+
+                // Close welcome banner functionality
+                const closeWelcomeBtn = document.getElementById('close-welcome-banner');
+                if (closeWelcomeBtn) {
+                    closeWelcomeBtn.addEventListener('click', hideWelcomeBanner);
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        
+        <!--Don't forget to fill these out!-->
+        <title>Eris Distillery | Invite</title>
+        <meta name="description" content="A formal invitation to the launch of Eris Gin." />
+        
+        
+        <!--Links to the main Style Sheet-->
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        
+        <!--Links to a modernizer JavaScript file that fixes a lot of issues with old browsers-->
+        <script src="js/modernizr.js"></script>
+        
+        <!--Makes the site so it won't scale down on small devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+
+    <body class="index-page">
+<div class="wrapper">
+    <header>
+        <h1>ERIS Distillery</h1>
+        <div id="personalized-greeting" class="greeting"></div>
+    </header>
+          
+    <div class="hero">
+        <img src="images/eris gin packaging-05.png" alt="eris Gin" style="width:100%;">
+    </div>
+
+<main>
+    <div class="content-container">
+        <section class="intro-section">
+            <div class="intro-text">
+                <h2>Join Us for an Exclusive Launch Event</h2>
+                <p>Eris Distillery is a queer-owned spirits brand in Texas, crafting premium liquors from ethically and sustainably farmed Red Hard Winter Wheat. Rooted in integrity and community, Eris reinvests locally to nurture a vibrant, healthy future.</p>
+                <p>Beyond distilling, the brand channels the bold, electric spirit of queer nightlife—where self-expression, resilience, and celebration collide. Each bottle embodies the pulse of the clubs that inspire it: unapologetic, inclusive, and alive with possibility.</p>
+                <p class="highlight-text">The showcase you've been invited to is for our newest product: <strong>Eris Acid House Gin!</strong></p>
+            </div>
+            <div class="product-image">
+                <img src="images/package design mockup.png" alt="Eris Acid House Gin">
+            </div>
+        </section>
+
+        <section id="invitation-section" class="invitation-section">
+            <div class="invitation-card">
+                <div class="invitation-header">
+                    <h3>You're Invited!</h3>
+                    <p>Please RSVP by filling out the form below.</p>
+                </div>
+            
+                <div class="event-details">
+                    <h4>Event Details</h4>
+                    <div class="event-info">
+                        <div class="event-item">
+                            <span class="event-label">Event:</span>
+                            <span class="event-value">Eris Distillery Networking Event</span>
+                        </div>
+                        <div class="event-item">
+                            <span class="event-label">Date:</span>
+                            <span class="event-value">Saturday, May 18th, 2026</span>
+                        </div>
+                        <div class="event-item">
+                            <span class="event-label">Time:</span>
+                            <span class="event-value">5:00 PM</span>
+                        </div>
+                        <div class="event-item">
+                            <span class="event-label">Location:</span>
+                            <span class="event-value">Eris Distillery, Texas</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <form id="rsvp-form" class="rsvp-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full-name">Full Name *</label>
+                            <input type="text" id="full-name" name="full-name" autocomplete="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </div>
+                    </div>
+            
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <select id="guests" name="guests">
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4+ Guests</option>
+                            </select>
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="dietary">Dietary Restrictions or Special Requests</label>
+                        <textarea id="dietary" name="dietary" rows="3" placeholder="Please let us know about any dietary restrictions or special accommodations needed..."></textarea>
+                    </div>
+            
+                    <div class="form-buttons">
+                        <button type="submit" class="rsvp-button">Send RSVP</button>
+                        <button type="button" class="continue-button" onclick="handleContinueToSite()">Continue to Site</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Eris Distillery</h4>
+            <p>Crafting premium spirits with integrity, sustainability, and community at our core.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Contact Information</h4>
+            <div class="contact-info">
+                <p><strong>Email:</strong> info@erisdistillery.com</p>
+                <p><strong>Phone:</strong> (555) 123-4567</p>
+                <p><strong>Location:</strong> Texas, USA</p>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Twitter</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Eris Distillery. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</footer>
+        </div>
+
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const isDemoMode = urlParams.get('demo') === '1';
+
+            // Cookie utility functions
+            function setCookie(name, value, days) {
+                const expires = new Date();
+                expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+            }
+
+            function getCookie(name) {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for(let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+            // Personalized greeting functionality
+            function displayPersonalizedGreeting() {
+                const greetingElement = document.getElementById('personalized-greeting');
+                const userName = getCookie('userName');
+                
+                if (userName) {
+                    greetingElement.innerHTML = `<p>Welcome back, ${userName}! We're excited to see you at our event.</p>`;
+                    greetingElement.style.display = 'block';
+                } else {
+                    greetingElement.innerHTML = `<p>Welcome! We're thrilled to invite you to our exclusive event.</p>`;
+                    greetingElement.style.display = 'block';
+                }
+            }
+
+            // Store user name when form is submitted
+            function storeUserName() {
+                const nameInput = document.getElementById('full-name');
+                if (nameInput && nameInput.value.trim()) {
+                    setCookie('userName', nameInput.value.trim(), 365); // Store for 1 year
+                }
+            }
+
+            // Show success message
+            function showSuccessMessage(userData) {
+                const form = document.getElementById('rsvp-form');
+                const successDiv = document.createElement('div');
+                successDiv.className = 'success-message';
+                successDiv.innerHTML = `
+                    <h3>🎉 RSVP Confirmed!</h3>
+                    <p>Thank you, ${userData.name}! Your RSVP has been submitted successfully.</p>
+                    ${userData.discount ? `<p><strong>You've earned a ${userData.discount}% discount!</strong></p>` : ''}
+                    <p>Click "Continue to Site" to explore our premium spirits.</p>
+                `;
+                
+                // Insert after form
+                form.parentNode.insertBefore(successDiv, form.nextSibling);
+                
+                // Auto-hide after 10 seconds
+                setTimeout(() => {
+                    if (successDiv.parentNode) {
+                        successDiv.parentNode.removeChild(successDiv);
+                    }
+                }, 10000);
+            }
+
+            function handleContinueToSite() {
+                const landingPath = isDemoMode ? 'landing.html?demo=1' : 'landing.html';
+                window.location.href = landingPath;
+            }
+
+            function getDemoUserData(data) {
+                return {
+                    name: data['full-name'] || 'Guest',
+                    discount: 20
+                };
+            }
+
+            function handleSuccessfulRsvp(userData, formElement) {
+                localStorage.setItem('userData', JSON.stringify(userData));
+                const discountMsg = userData.discount ?
+                    ` You've earned a ${userData.discount}% discount!` : '';
+                alert(`Thank you for your RSVP, ${userData.name}!${discountMsg} You can now continue to our site.`);
+                formElement.reset();
+                showSuccessMessage(userData);
+            }
+
+            // Enhanced form submission handler
+            function handleFormSubmission(event) {
+                event.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(event.target);
+                const data = {};
+                for (let [key, value] of formData.entries()) {
+                    data[key] = value;
+                }
+                
+                // Store user name locally
+                storeUserName();
+
+                // Framer/static demo mode (no PHP backend)
+                if (isDemoMode) {
+                    handleSuccessfulRsvp(getDemoUserData(data), event.target);
+                    return false;
+                }
+                
+                // Submit to database
+                fetch('submit_rsvp.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(result => {
+                    if (result.success) {
+                        handleSuccessfulRsvp(result.user_data, event.target);
+                    } else {
+                        alert('Error submitting RSVP: ' + (result.error || 'Unknown error'));
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Backend not reachable. Running in demo mode so you can still preview in Framer.');
+                    handleSuccessfulRsvp(getDemoUserData(data), event.target);
+                });
+                
+                return false;
+            }
+
+            // Initialize greeting when page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                displayPersonalizedGreeting();
+                
+                // Add form submission handler
+                const form = document.querySelector('#rsvp-form');
+                if (form) {
+                    form.addEventListener('submit', handleFormSubmission);
+                }
+            });
+
+            // Alternative: Store name when user types in the name field (optional)
+            document.addEventListener('DOMContentLoaded', function() {
+                const nameInput = document.getElementById('full-name');
+                if (nameInput) {
+                    nameInput.addEventListener('blur', function() {
+                        if (this.value.trim()) {
+                            setCookie('userName', this.value.trim(), 365);
+                            // Update greeting immediately if user is typing
+                            setTimeout(displayPersonalizedGreeting, 100);
+                        }
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

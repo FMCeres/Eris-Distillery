@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        
+        <title>Eris Distillery | Profile</title>
+        <meta name="description" content="Manage your Eris Distillery profile and preferences." />
+        
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <script src="js/modernizr.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+
+    <body>
+        <!-- Age Verification Popup -->
+        <div id="ageVerificationModal" class="age-modal">
+            <div class="age-modal-content">
+                <div class="age-modal-header">
+                    <h2>Age Verification Required</h2>
+                    <p>You must be 21 or older to view this content</p>
+                </div>
+                <div class="age-modal-body">
+                    <p>Eris Distillery is committed to responsible consumption. Please verify your age to continue.</p>
+                    <div class="age-buttons">
+                        <button id="confirmAge" class="age-btn age-btn-confirm">I am 21 or older</button>
+                        <button id="denyAge" class="age-btn age-btn-deny">I am under 21</button>
+                    </div>
+                    <p class="age-disclaimer">By clicking "I am 21 or older", you agree to our <a href="#" class="age-link">Terms of Service</a> and <a href="#" class="age-link">Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Under Age Message -->
+        <div id="underAgeMessage" class="age-message" style="display: none;">
+            <div class="age-message-content">
+                <h2>Access Restricted</h2>
+                <p>You must be 21 or older to view this content.</p>
+                <p>Please visit us when you're of legal drinking age.</p>
+            </div>
+        </div>
+
+<div class="wrapper">
+    <header>
+        <div class="header-content">
+            <h1>ERIS Distillery</h1>
+            <div class="header-buttons">
+                <a href="landing.html" class="header-btn" id="homeBtn">Home</a>
+                <div class="header-divider"></div>
+                <a href="landing.html#products" class="header-btn" id="productsBtn">Products</a>
+                <div class="header-divider"></div>
+                <a href="#" class="header-btn" id="storeBtn">Store</a>
+                <div class="header-divider"></div>
+                <a href="profile.html" class="header-btn profile-icon" id="profileBtn">👤</a>
+            </div>
+        </div>
+    </header>
+
+<main>
+    <div class="content-container">
+        <section class="profile-section">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <h2>Your Profile</h2>
+                    <p>Manage your account information and preferences</p>
+                </div>
+                
+                <div class="profile-content">
+                    <div class="profile-info">
+                        <div class="profile-avatar">
+                            <div class="avatar-placeholder">👤</div>
+                        </div>
+                        <div class="profile-details">
+                            <h3 id="userName">Guest User</h3>
+                            <p class="member-since">Member since 2024</p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-form">
+                        <h4>Update Information</h4>
+                        <form class="profile-form-content">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-name">Full Name</label>
+                                    <input type="text" id="profile-name" name="profile-name" placeholder="Enter your full name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-email">Email Address</label>
+                                    <input type="email" id="profile-email" name="profile-email" placeholder="Enter your email">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="profile-phone">Phone Number</label>
+                                    <input type="tel" id="profile-phone" name="profile-phone" placeholder="Enter your phone number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile-birthday">Date of Birth</label>
+                                    <input type="date" id="profile-birthday" name="profile-birthday">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="profile-address">Address</label>
+                                <textarea id="profile-address" name="profile-address" rows="3" placeholder="Enter your address"></textarea>
+                            </div>
+                            
+                            <div class="preferences-section">
+                                <h4>Preferences</h4>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="newsletter" checked>
+                                        <span class="checkmark"></span>
+                                        Receive newsletter updates
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="events">
+                                        <span class="checkmark"></span>
+                                        Notify me about distillery events
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="promotions">
+                                        <span class="checkmark"></span>
+                                        Send me special promotions
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="profile-save-btn">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Eris Distillery</h4>
+            <p>Crafting premium spirits with integrity, sustainability, and community at our core.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Contact Information</h4>
+            <div class="contact-info">
+                <p><strong>Email:</strong> info@erisdistillery.com</p>
+                <p><strong>Phone:</strong> (555) 123-4567</p>
+                <p><strong>Location:</strong> Texas, USA</p>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Twitter</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Eris Distillery. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</footer>
+        </div>
+
+        <script>
+            // Age verification and profile functionality
+            let userVerified = false;
+
+            // Age verification modal functionality
+            function showAgeVerification() {
+                const modal = document.getElementById('ageVerificationModal');
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function hideAgeVerification() {
+                const modal = document.getElementById('ageVerificationModal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            function showUnderAgeMessage() {
+                const message = document.getElementById('underAgeMessage');
+                message.style.display = 'block';
+                document.querySelector('.wrapper').style.display = 'none';
+            }
+
+            // Cookie utility functions
+            function setCookie(name, value, days) {
+                const expires = new Date();
+                expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+            }
+
+            function getCookie(name) {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for(let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+            // Load user profile data
+            function loadUserProfile() {
+                const userName = getCookie('userName');
+                const userEmail = getCookie('userEmail');
+                const userPhone = getCookie('userPhone');
+                
+                if (userName) {
+                    document.getElementById('userName').textContent = userName;
+                    document.getElementById('profile-name').value = userName;
+                }
+                
+                if (userEmail) {
+                    document.getElementById('profile-email').value = userEmail;
+                }
+                
+                if (userPhone) {
+                    document.getElementById('profile-phone').value = userPhone;
+                }
+            }
+
+            // Save profile data
+            function saveProfileData() {
+                const name = document.getElementById('profile-name').value;
+                const email = document.getElementById('profile-email').value;
+                const phone = document.getElementById('profile-phone').value;
+                
+                if (name) setCookie('userName', name, 365);
+                if (email) setCookie('userEmail', email, 365);
+                if (phone) setCookie('userPhone', phone, 365);
+                
+                // Update displayed name
+                document.getElementById('userName').textContent = name || 'Guest User';
+                
+                alert('Profile updated successfully!');
+            }
+
+            // Initialize page
+            document.addEventListener('DOMContentLoaded', function() {
+                // Check if user was already verified in this session
+                const wasVerified = sessionStorage.getItem('ageVerified');
+                
+                if (wasVerified === 'true') {
+                    userVerified = true;
+                    loadUserProfile();
+                } else {
+                    // Show age verification popup
+                    setTimeout(showAgeVerification, 1000);
+                }
+                
+                // Age verification event listeners
+                document.getElementById('confirmAge').addEventListener('click', function() {
+                    userVerified = true;
+                    hideAgeVerification();
+                    sessionStorage.setItem('ageVerified', 'true');
+                    loadUserProfile();
+                });
+
+                document.getElementById('denyAge').addEventListener('click', function() {
+                    showUnderAgeMessage();
+                });
+                
+                // Profile form submission
+                document.querySelector('.profile-form-content').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    saveProfileData();
+                });
+            });
+        </script>
+    </body>
+</html>

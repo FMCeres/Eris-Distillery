@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eris Distillery | Framer Project Links</title>
+    <style>
+        :root {
+            --green: #31b144;
+            --black: #111111;
+            --bg: #f5f7f5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--black);
+            line-height: 1.45;
+        }
+
+        main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px 16px 40px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            color: var(--green);
+            font-size: 2rem;
+        }
+
+        p {
+            margin: 0 0 16px;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0 24px;
+        }
+
+        .btn {
+            border: 1px solid var(--black);
+            background: white;
+            color: var(--black);
+            padding: 10px 14px;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            background: var(--black);
+            color: white;
+            outline: none;
+        }
+
+        .frames {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        .frame-card {
+            border: 1px solid var(--black);
+            background: white;
+            padding: 10px;
+        }
+
+        .frame-card h2 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+        }
+
+        iframe {
+            width: 100%;
+            min-height: 520px;
+            border: 1px solid #d4d4d4;
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Eris Distillery</h1>
+        <p>Framer-ready links for your project page. Use this URL in a Framer Embed component or link each page directly.</p>
+
+        <div class="actions">
+            <a class="btn" href="index.html?demo=1" target="_blank" rel="noopener noreferrer">Open RSVP (Demo)</a>
+            <a class="btn" href="landing.html?demo=1" target="_blank" rel="noopener noreferrer">Open Landing (Demo)</a>
+            <a class="btn" href="index.html" target="_blank" rel="noopener noreferrer">Open RSVP (Live/PHP)</a>
+            <a class="btn" href="landing.html" target="_blank" rel="noopener noreferrer">Open Landing (Live)</a>
+        </div>
+
+        <section class="frames" aria-label="Project previews">
+            <article class="frame-card">
+                <h2>RSVP Preview</h2>
+                <iframe title="RSVP preview" src="index.html?demo=1" loading="lazy"></iframe>
+            </article>
+            <article class="frame-card">
+                <h2>Landing Preview</h2>
+                <iframe title="Landing preview" src="landing.html?demo=1" loading="lazy"></iframe>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
